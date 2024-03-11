@@ -5,11 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject spawnerObject;
-    public float slowdownovertime = 20;
+    public float slowdownovertime;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        slowdownovertime = 20;
+        rb = GetComponent<Rigidbody>();
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -23,16 +24,21 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
-            GameObject.Find("EnemySpawner").GetComponent<EnemySpawn>().spawncount = 0;
+            GameObject.Find("EnemySpawner").GetComponent<EnemySpawn>();
         }
 
     }
+
+    private void Update()
+    {
+        FireBullet();
+    }
     // Update is called once per frame
-    void Update()
+    public void FireBullet()
     {
         if (slowdownovertime >= 0)
         {
-            slowdownovertime -= Time.deltaTime;
+            slowdownovertime -= Time.deltaTime * 3.5f;
         }
         if (CompareTag("LeftCannon"))
         {

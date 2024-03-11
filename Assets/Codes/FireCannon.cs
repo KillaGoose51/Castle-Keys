@@ -25,21 +25,29 @@ public class FireCannon : MonoBehaviour
 
             GameObject clone = Instantiate(Bullet, CannonLeft.transform.position, Quaternion.identity);
             clone.tag = "LeftCannon";
+            clone.GetComponent<Bullet>().slowdownovertime = 10;
+            clone.GetComponent<Bullet>().FireBullet();
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             GameObject clone = Instantiate(Bullet, CannonRight.transform.position, Quaternion.identity);
             clone.tag = "RightCannon";
+            clone.GetComponent<Bullet>().slowdownovertime = 10;
+            clone.GetComponent<Bullet>().FireBullet();
         }
        if (Input.GetKeyDown(KeyCode.W))
         {
             GameObject clone = Instantiate(Bullet, CannonUp.transform.position, Quaternion.identity);
             clone.tag = "UpCannon";
+            clone.GetComponent<Bullet>().slowdownovertime = 10;
+            clone.GetComponent<Bullet>().FireBullet();
         }
        if (Input.GetKeyDown(KeyCode.S))
         {
             GameObject clone = Instantiate(Bullet, CannonDown.transform.position, Quaternion.identity);
             clone.tag = "DownCannon";
+            clone.GetComponent<Bullet>().slowdownovertime = 10;
+            clone.GetComponent<Bullet>().FireBullet();
         }
     }
 }

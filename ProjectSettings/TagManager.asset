@@ -10,15 +10,18 @@ TagManager:
   - UpCannon
   - DownCannon
   - Wall
+  - Base
+  - Night
+  - Day
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - GameManager
   - Water
   - UI
-  - 
-  - 
+  - Base
+  - Bullet
   - 
   - 
   - 
