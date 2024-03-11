@@ -50,7 +50,7 @@ public class MainMenuSceneController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        gameManager.exposureAmount = 1f;
+        
         RenderSettings.skybox.SetFloat("_Exposure", gameManager.exposureAmount);
         DynamicGI.UpdateEnvironment();
     }
