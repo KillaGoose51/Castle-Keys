@@ -27,8 +27,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Base"))
         {
             collision.gameObject.GetComponent<Health>().GetHurt();
-            Destroy(gameObject);
-            
+            Destroy(gameObject);   
         }
     }
 }

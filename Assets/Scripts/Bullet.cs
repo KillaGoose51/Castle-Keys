@@ -8,9 +8,11 @@ public class Bullet : MonoBehaviour
     public GameObject spawnerObject;
     public float slowdownovertime;
     private Rigidbody rb;
+    private Health bhealth;
     // Start is called before the first frame update
     void Start()
     {
+        bhealth = GameObject.FindWithTag("Base").GetComponent<Health>();
         rb = GetComponent<Rigidbody>();
     }
     
@@ -19,6 +21,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
+            --bhealth.health;
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Enemy"))
