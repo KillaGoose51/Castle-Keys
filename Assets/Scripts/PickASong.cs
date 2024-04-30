@@ -98,7 +98,8 @@ public class PickASong : MonoBehaviour
                  break;
              case 2:
                  musicController.audioController.clip = musicController.musicList[2];
-                 musicController.songName.text = "Song\nSleep Walking";
+                 musicController.songName.text = "Song\nSle" +
+                    "ep Walking";
                 StartCoroutine(ColorChange(Left));
                 StartCoroutine(ColorChangeOff(Center));
                 StartCoroutine(ColorChangeOff(Right));

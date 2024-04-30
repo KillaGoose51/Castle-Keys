@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    float speed = 30f;
+    float speed = 10f;
     public GameObject castle;
     public Vector3 castlepos;
     // Start is called before the first frame update

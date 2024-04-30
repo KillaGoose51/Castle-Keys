@@ -22,54 +22,29 @@ public class FireCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (Input.GetKeyDown(KeyCode.A))
         {
-
-            GameObject clone = Instantiate(Bullet, CannonLeft.transform.position, Quaternion.identity);
-            clone.tag = "LeftCannon";
-            clone.GetComponent<Bullet>().slowdownovertime = 10;
-            clone.GetComponent<Bullet>().FireBullet();
-            Recoil(-50, 0);
-            cooldownthing += 0.1f;
+            FireLeft();
         }
-
-        else if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            GameObject clone = Instantiate(Bullet, CannonRight.transform.position, Quaternion.identity);
-            clone.tag = "RightCannon";
-            clone.GetComponent<Bullet>().slowdownovertime = 10;
-            clone.GetComponent<Bullet>().FireBullet();
-            Recoil(50, 0);
-            cooldownthing += 0.1f;
+            FireRight();
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            GameObject clone = Instantiate(Bullet, CannonUp.transform.position, Quaternion.identity);
-            clone.tag = "UpCannon";
-            clone.GetComponent<Bullet>().slowdownovertime = 10;
-            clone.GetComponent<Bullet>().FireBullet();
-            Recoil(0, 50);
-            cooldownthing += 0.1f;
+            FireUp();
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            GameObject clone = Instantiate(Bullet, CannonDown.transform.position, Quaternion.identity);
-            clone.tag = "DownCannon";
-            clone.GetComponent<Bullet>().slowdownovertime = 10;
-            clone.GetComponent<Bullet>().FireBullet();
-            Recoil(0, -50);
-            cooldownthing += 0.1f;
+            FireDown();
         }
-
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(cooldownthing == 0)
-        { 
-            GoBackToZero(); 
+        if (cooldownthing == 0)
+        {
+            GoBackToZero();
         }
 
     }
@@ -88,13 +63,36 @@ public class FireCannon : MonoBehaviour
         }
     }
 
-    //public IEnumerator GoSERIOUSLYBACKTOZERO()
-    //{
-
-
-    //}
-    void Recoil(int x, int z)
+    public void FireLeft()
     {
-        lRb.AddForce(new Vector3(x, 0, z), ForceMode.Impulse);
+        GameObject clone = Instantiate(Bullet, CannonLeft.transform.position, Quaternion.identity);
+        clone.tag = "LeftCannon";
+        clone.GetComponent<Bullet>().slowdownovertime = 10;
+        clone.GetComponent<Bullet>().FireBullet();
+        cooldownthing += 0.1f;
+    }
+    public void FireRight()
+    {
+        GameObject clone = Instantiate(Bullet, CannonRight.transform.position, Quaternion.identity);
+        clone.tag = "RightCannon";
+        clone.GetComponent<Bullet>().slowdownovertime = 10;
+        clone.GetComponent<Bullet>().FireBullet();
+        cooldownthing += 0.1f;
+    }
+    public void FireUp()
+    {
+        GameObject clone = Instantiate(Bullet, CannonUp.transform.position, Quaternion.identity);
+        clone.tag = "UpCannon";
+        clone.GetComponent<Bullet>().slowdownovertime = 10;
+        clone.GetComponent<Bullet>().FireBullet();
+        cooldownthing += 0.1f;
+    }
+    public void FireDown()
+    {
+        GameObject clone = Instantiate(Bullet, CannonDown.transform.position, Quaternion.identity);
+        clone.tag = "DownCannon";
+        clone.GetComponent<Bullet>().slowdownovertime = 10;
+        clone.GetComponent<Bullet>().FireBullet();
+        cooldownthing += 0.1f;
     }
 }

@@ -10,12 +10,13 @@ public class AudioManager : MonoBehaviour
 {
     private static AudioManager instance;
 
-
+    public int songChosen;
     public static AudioManager Instance { get { return instance; } }
 
     private AudioSource gameMusic;
     public Slider masterSlider, uiSlider, cannonSlider, musicSlider;
     public AudioMixer audioMixer;
+    public PickASong pickASong;
 
     public TextMeshProUGUI[] TMPNumbers;
     [Header("Volume Integers")]
@@ -41,7 +42,8 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        
+        try { pickASong = GameObject.Find("ChangeSong").GetComponent<PickASong>(); } catch { }
+        songChosen = pickASong.animCount;
     }
    
 
