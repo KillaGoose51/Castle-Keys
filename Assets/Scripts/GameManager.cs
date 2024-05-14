@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public Renderer rend;
 
     public AudioSource selectAS;
-    
 
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
@@ -33,8 +32,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += DayNightCycle;
-
-
+        selectAS.clip = null;
 
     }
     void Update()

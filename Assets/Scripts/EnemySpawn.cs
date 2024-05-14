@@ -10,8 +10,9 @@ public class EnemySpawn : MonoBehaviour
     float randomtimeeasy;
     float randomtimemedium;
     float randomtimehard;
-
-
+    float randomtimeimp;
+    public Health health;
+    public bool hasbeenset;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,6 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     cooldown -= Time.deltaTime;
 
         if (cooldown <= 0)
@@ -50,6 +50,11 @@ public class EnemySpawn : MonoBehaviour
                 Instantiate(objectPrefab, spawnpos[intR].position, transform.rotation);
                 cooldown += randomtimehard;
                 break;
+            case 4:
+                Instantiate(objectPrefab, spawnpos[intR].position, transform.rotation);
+                cooldown += randomtimeimp;
+                SetMaxHp();
+                break;
             default:
                 Debug.Log("No Difficulty Selectected");
                 break;
@@ -61,5 +66,14 @@ public class EnemySpawn : MonoBehaviour
         randomtimeeasy = Random.Range(2f, 3f);
         randomtimemedium = Random.Range(0.50f, 1.0f);
         randomtimehard = Random.Range(0.25f, 0.5f);
+        randomtimeimp = Random.Range(0.05f, 0.1f);
+    }
+    public void SetMaxHp()
+    {
+        if (hasbeenset == false)
+        {
+        health.health = 500;
+        hasbeenset = true;
+        }
     }
 }
