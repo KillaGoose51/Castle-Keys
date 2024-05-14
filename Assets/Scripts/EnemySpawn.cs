@@ -58,8 +58,8 @@ public class EnemySpawn : MonoBehaviour
     void RandomValues()
     {
         intR = Random.Range(0, 4);
-        randomtimeeasy = Random.Range(3f, 5f);
-        randomtimemedium = Random.Range(1f, 3f);
-        randomtimehard = Random.Range(0.1f, 0.4f);
+        randomtimeeasy = Random.Range(2f, 3f);
+        randomtimemedium = Random.Range(0.50f, 1.0f);
+        randomtimehard = Random.Range(0.25f, 0.5f);
     }
 }

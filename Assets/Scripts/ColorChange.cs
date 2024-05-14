@@ -42,7 +42,7 @@ public class ColorChange : MonoBehaviour
         {
             ColorBlock buttonColors = button.colors;
             buttonColors.highlightedColor = new Color(1, 1, 1);
-            buttonColors.selectedColor = new Color(0, 0, 0);
+//            buttonColors.selectedColor = new Color(0, 0, 0);
             buttonColors.normalColor = new Color(0, 0, 0);
             button.colors = buttonColors;
         }
@@ -54,7 +54,7 @@ public class ColorChange : MonoBehaviour
         {
             ColorBlock buttonColors = button.colors;
             buttonColors.highlightedColor = new Color(0, 0, 0);
-            buttonColors.selectedColor = new Color(1, 1, 1);
+//            buttonColors.selectedColor = new Color(1, 1, 1);
             buttonColors.normalColor = new Color(1, 1, 1);
             button.colors = buttonColors;
         }

@@ -42,8 +42,8 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        try { pickASong = GameObject.Find("ChangeSong").GetComponent<PickASong>(); } catch { }
-        songChosen = pickASong.animCount;
+        try { pickASong = GameObject.Find("ChangeSong").GetComponent<PickASong>(); 
+        songChosen = pickASong.animCount;} catch { }
     }
    
 
