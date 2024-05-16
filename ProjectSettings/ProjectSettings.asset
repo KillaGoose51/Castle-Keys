@@ -20,9 +20,9 @@ PlayerSettings:
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
-  m_SplashScreenAnimation: 1
+  m_SplashScreenAnimation: 0
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -39,7 +39,11 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 2b506e636d8e13b40ac81b64ba5e367b, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 2b506e636d8e13b40ac81b64ba5e367b, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -154,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.CastleKeys
+    Android: com.GCTC.MonasteryMusic
     Standalone: com.DefaultCompany.Castle-Keys
   buildNumber:
     Standalone: 0
@@ -164,7 +168,7 @@ PlayerSettings:
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 22
-  AndroidTargetSdkVersion: 0
+  AndroidTargetSdkVersion: 34
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -252,12 +256,12 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: '{inproject}: Keys/UploadKey.keystore'
+  AndroidKeyaliasName: monastery music
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -265,7 +269,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -276,7 +280,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 98ef92b0aa6eb7b42b0b290482f2ccb4, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -735,7 +746,8 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Android: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   managedStrippingLevel:
@@ -766,14 +778,51 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: CastleKeys
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: GCTC
+  metroCertificateIssuer: GCTC
+  metroCertificateNotAfter: 809a30129ac6db01
   metroApplicationDescription: Castle Keys
-  wsaImages: {}
-  metroTileShortName: Castle Keys
+  wsaImages:
+    65636: Assets/Assets/MonasteryMusicLogos/50x50.png
+    65661: Assets/Assets/MonasteryMusicLogos/63x63.png
+    65686: Assets/Assets/MonasteryMusicLogos/75x75.png
+    65736: Assets/Assets/MonasteryMusicLogos/100x100.png
+    65936: Assets/Assets/MonasteryMusicLogos/200x200.png
+    131172: Assets/Assets/MonasteryMusicLogos/620x300.png
+    131272: Assets/Assets/MonasteryMusicLogos/1240x600.png
+    2031632: Assets/Assets/MonasteryMusicLogos/16x16.png
+    2031640: Assets/Assets/MonasteryMusicLogos/24x24.png
+    2031648: Assets/Assets/MonasteryMusicLogos/32z32.png
+    2031664: Assets/Assets/MonasteryMusicLogos/48x48.png
+    2031716: Assets/Assets/MonasteryMusicLogos/44x44.png
+    2031741: Assets/Assets/MonasteryMusicLogos/55x55.png
+    2031766: Assets/Assets/MonasteryMusicLogos/66x66.png
+    2031816: Assets/Assets/MonasteryMusicLogos/88x88.png
+    2031872: Assets/Assets/MonasteryMusicLogos/256x256.png
+    2032016: Assets/Assets/MonasteryMusicLogos/176x176.png
+    2097252: Assets/Assets/MonasteryMusicLogos/71x71.png
+    2097277: Assets/Assets/MonasteryMusicLogos/89x89.png
+    2097302: Assets/Assets/MonasteryMusicLogos/107x107.png
+    2097352: Assets/Assets/MonasteryMusicLogos/142x142.png
+    2097552: Assets/Assets/MonasteryMusicLogos/284x284.png
+    2162788: Assets/Assets/MonasteryMusicLogos/150x150.png
+    2162813: Assets/Assets/MonasteryMusicLogos/188x188.png
+    2162838: Assets/Assets/MonasteryMusicLogos/225x225.png
+    2162888: Assets/Assets/MonasteryMusicLogos/300x300.png
+    2163088: Assets/Assets/MonasteryMusicLogos/600x600.png
+    2228324: Assets/Assets/MonasteryMusicLogos/310x310.png
+    2228349: Assets/Assets/MonasteryMusicLogos/388x388.png
+    2228374: Assets/Assets/MonasteryMusicLogos/465x465.png
+    2228424: Assets/Assets/MonasteryMusicLogos/620x620.png
+    2228624: Assets/Assets/MonasteryMusicLogos/1240x1240.png
+    2293860: Assets/Assets/MonasteryMusicLogos/310x150.png
+    2293885: Assets/Assets/MonasteryMusicLogos/388x188.png
+    2293910: Assets/Assets/MonasteryMusicLogos/465x225.png
+    2293960: Assets/Assets/MonasteryMusicLogos/620x300.png
+    2294160: Assets/Assets/MonasteryMusicLogos/1240x600.png
+  metroTileShortName: Monastery Music
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
